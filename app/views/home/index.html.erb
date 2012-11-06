@@ -1,2 +1,13 @@
 <h1>Beer shop</h1>
-<%= link_to "Beer list", beers_path %>
+<h2>A sample backbone / Ruby on Rails app to manage a beer list</h2>
+
+<%= link_to "Classic app", beers_path %>
+
+<div id="notice"></div>
+<div id="app"></div>
+
+<script type="text/javascript">
+    $(function() {
+        BeerShop.initialize();
+    });
+</script>
