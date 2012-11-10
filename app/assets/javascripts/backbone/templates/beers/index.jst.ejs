@@ -1,31 +1,23 @@
 <h1>Backbone beers</h1>
 
 <table>
-  <tr>
-    <th>Brewer</th>
-    <th>Name</th>
-    <th>Style</th>
-    <th>Abv</th>
-    <th>Ibu</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  
-<% beers.each(function(beer) { %>
-  <tr>
-    <td><%= beer.escape('brewer') %></td>
-    <td><%= beer.escape('name') %></td>
-    <td><%= beer.escape('style') %></td>
-    <td><%= beer.escape('abv') %></td>
-    <td><%= beer.escape('ibu') %></td>
-    <td>link_to 'Show', beer</td>
-    <td>link_to 'Edit', edit_beer_path(beer)</td>
-    <td>link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' }</td>
-  </tr>
-<% }); %>
+  <thead>
+    <tr>
+      <th>Brewer</th>
+      <th>Name</th>
+      <th>Style</th>
+      <th>Abv</th>
+      <th>Ibu</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="beer-list">
+    <!-- content -->
+  </tbody>
 </table>
 
 <br />
 
-link_to 'New Beer', new_beer_path
+<a href="#new">New Beer</a>

@@ -1,12 +1,14 @@
 BeerShop.Views.BeersIndex = Backbone.View.extend({
   initialize: function() {
-       this.collection.fetch();
-       this.collection.bind("reset", this.render, this);
   },
   
   render: function() {
-    console.log(this.collection.length);
-    this.$el.html(JST['backbone/templates/beers/index']({ beers: this.collection }));
+    var self = this;
+    this.$el.html(JST['backbone/templates/beers/index']());
+    this.collection.each(function(beer) {
+    	var beerView = new BeerShop.Views.BeerView({ model: beer });
+    	self.$('#beer-list').append(beerView.render().el);
+    });
     return this;
   }
 });
