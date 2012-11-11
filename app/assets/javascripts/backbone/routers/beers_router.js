@@ -6,36 +6,24 @@ BeerShop.Routers.Beers = Backbone.Router.extend({
   },
   
   index: function() {
-    var beers = new BeerShop.Collections.Beers();
-    beers.fetch({
+    BeerShop.beers = new BeerShop.Collections.Beers();
+    BeerShop.beers.fetch({
       success: function(collection, data) {
-        var view = new BeerShop.Views.BeersIndex({ collection: collection });
-        $('#app').html(view.render().el);
+        new BeerShop.Views.BeersIndex({ collection: collection });
       },
       error: function() {
-        new Error({ message: 'Error loading beers.' });
-        window.location.hash = "#";
+        new BeerShop.Views.Error({ message: 'Error loading beers.' });
+        this.navigate("");
       }      
     });
-    //beers.bind("reset", view.render, view);
   },
   
   newBeer: function() {
-    var view = new BeerShop.Views.BeerEdit({ model: new BeerShop.Models.Beer() });
-    $('#app').html(view.render().el);
+    new BeerShop.Views.BeerEdit({ model: new BeerShop.Models.Beer() });
   },
   
   edit: function(id) {
-    var beer = new BeerShop.Models.Beer({ id: id });
-    beer.fetch({
-      success: function(model, data) {
-        var view = new BeerShop.Views.BeerEdit({ model: model });  
-        $('#app').html(view.render().el);
-      },
-      error: function() {
-        new Error({ message: 'Could not load that beer.' });
-        window.location.hash = "#";
-      }      
-    });
+    var beer = BeerShop.beers.get(id);
+    new BeerShop.Views.BeerEdit({ model: beer });    
   }
 });

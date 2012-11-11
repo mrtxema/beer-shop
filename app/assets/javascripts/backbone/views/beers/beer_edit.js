@@ -1,12 +1,22 @@
 BeerShop.Views.BeerEdit = Backbone.View.extend({
+  el: '#app',
+  
   events: {
     "submit form": "save"
   },
-  
+   
   initialize: function() {
+    if (BeerShop.previousView) {
+      BeerShop.previousView.undelegateEvents();
+    }
+    this.render();
+    BeerShop.previousView = this;
   },
   
   save: function() {
+    if (this.model.isNew()) {
+      BeerShop.beers.add(this.model);
+    }
     var self = this;
     this.model.save({
       brewer: this.$('[name=brewer]').val(),
@@ -16,14 +26,14 @@ BeerShop.Views.BeerEdit = Backbone.View.extend({
       ibu:    this.$('[name=ibu]').val()
     }, {
       success: function(model, data) {
-        //new BeerShop.Views.Notice({ message: 'Successfully saved' });
+        new BeerShop.Views.Notice({ message: 'Successfully saved' });
         self.model = model;
         self.render();
         self.delegateEvents();
-        //Backbone.history.saveLocation('beers/' + model.id);
+        Backbone.history.navigate('beers/' + model.id);
       },
       error: function() {
-        new BeerShop.Views.Error();
+        new BeerShop.Views.Error({ message: 'Could not save that beer.' });
       }
     });
     return false;

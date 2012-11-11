@@ -1,11 +1,13 @@
 BeerShop.Views.BeerView = Backbone.View.extend({
-  tagName: 'tr',
+  el: '#beer-list',
+  tagName: 'tbody',
   
   initialize: function() {
+    this.render();
   },
   
   render: function() {
-    this.$el.html(JST['backbone/templates/beers/view']({ beer: this.model }));
+    this.$el.append(JST['backbone/templates/beers/view']({ beer: this.model }));
     return this;
   }
 });

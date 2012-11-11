@@ -1,3 +1,1 @@
-BeerShop.Models.Beer = Backbone.Model.extend({
-  urlRoot: '/beers'
-});
+BeerShop.Models.Beer = Backbone.Model.extend({});

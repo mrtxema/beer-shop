@@ -3,23 +3,23 @@
 <form>
   <div class="field">
     Brewer<br />
-    <input name="brewer" />
+    <input name="brewer" value="<%= beer.escape('brewer') %>" />
   </div>
   <div class="field">
     Name<br />
-    <input name="name" />
+    <input name="name" value="<%= beer.escape('name') %>" />
   </div>
   <div class="field">
     Style<br />
-    <input name="style" />
+    <input name="style" value="<%= beer.escape('style') %>" />
   </div>
   <div class="field">
     ABV<br />
-    <input name="abv" />
+    <input name="abv" value="<%= beer.escape('abv') %>" />
   </div>
   <div class="field">
     IBU<br />
-    <input name="ibu" />
+    <input name="ibu" value="<%= beer.escape('ibu') %>" />
   </div>
   <div class="actions">
     <input type="submit" />
