@@ -26,11 +26,11 @@ BeerShop.Views.BeerEdit = Backbone.View.extend({
       ibu:    this.$('[name=ibu]').val()
     }, {
       success: function(model, data) {
-        new BeerShop.Views.Notice({ message: 'Successfully saved' });
+        new BeerShop.Views.Notice({ message: 'Beer successfully saved' });
         self.model = model;
         self.render();
         self.delegateEvents();
-        Backbone.history.navigate('beers/' + model.id);
+        Backbone.history.navigate('beers/' + model.id + '/edit');
       },
       error: function() {
         new BeerShop.Views.Error({ message: 'Could not save that beer.' });

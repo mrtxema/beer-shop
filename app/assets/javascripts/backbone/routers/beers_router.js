@@ -1,8 +1,9 @@
 BeerShop.Routers.Beers = Backbone.Router.extend({
   routes: {
-    "":          "index",
-    "new":       "newBeer",
-    "beers/:id": "edit"
+    "":               "index",
+    "new":            "newBeer",
+    "beers/:id/edit": "edit",
+    "beers/:id":      "show"
   },
   
   index: function() {
@@ -25,5 +26,10 @@ BeerShop.Routers.Beers = Backbone.Router.extend({
   edit: function(id) {
     var beer = BeerShop.beers.get(id);
     new BeerShop.Views.BeerEdit({ model: beer });    
+  },
+  
+  show: function(id) {
+    var beer = BeerShop.beers.get(id);
+    new BeerShop.Views.BeerShow({ model: beer });    
   }
 });

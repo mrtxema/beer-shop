@@ -2,29 +2,32 @@
 
 <form>
   <div class="field">
-    Brewer<br />
+    <label for="brewer">Brewer</label><br />
     <input name="brewer" value="<%= beer.escape('brewer') %>" />
   </div>
   <div class="field">
-    Name<br />
+    <label for="name">Name</label><br />
     <input name="name" value="<%= beer.escape('name') %>" />
   </div>
   <div class="field">
-    Style<br />
+    <label for="style">Style</label><br />
     <input name="style" value="<%= beer.escape('style') %>" />
   </div>
   <div class="field">
-    ABV<br />
+    <label for="abv">ABV</label><br />
     <input name="abv" value="<%= beer.escape('abv') %>" />
   </div>
   <div class="field">
-    IBU<br />
+    <label for="ibu">IBU</label><br />
     <input name="ibu" value="<%= beer.escape('ibu') %>" />
   </div>
   <div class="actions">
-    <input type="submit" />
+    <input type="submit" value="<%= beer.isNew() ? 'Create' : 'Update' %> beer" />
   </div>
 </form>
 
-<a href="">Show</a> |
+<% if (!beer.isNew()) { %>
+  <a href="#beers/<%= beer.id %>">Show</a> |
+<% } %>
+
 <a href="#">Back</a>
