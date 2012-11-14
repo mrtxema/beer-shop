@@ -6,11 +6,6 @@ BeerShop.Views.BeerEdit = Backbone.View.extend({
   },
    
   initialize: function() {
-    if (BeerShop.previousView) {
-      BeerShop.previousView.undelegateEvents();
-    }
-    this.render();
-    BeerShop.previousView = this;
   },
   
   save: function() {
@@ -26,14 +21,14 @@ BeerShop.Views.BeerEdit = Backbone.View.extend({
       ibu:    this.$('[name=ibu]').val()
     }, {
       success: function(model, data) {
-        new BeerShop.Views.Notice({ message: 'Beer successfully saved' });
+        BeerShop.Views.notice.showMessage('Beer successfully saved');
         self.model = model;
         self.render();
         self.delegateEvents();
         Backbone.history.navigate('beers/' + model.id + '/edit');
       },
       error: function() {
-        new BeerShop.Views.Error({ message: 'Could not save that beer.' });
+        BeerShop.Views.error.showMessage('Could not save that beer.');
       }
     });
     return false;

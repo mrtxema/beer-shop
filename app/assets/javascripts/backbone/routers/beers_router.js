@@ -6,30 +6,49 @@ BeerShop.Routers.Beers = Backbone.Router.extend({
     "beers/:id":      "show"
   },
   
-  index: function() {
+  initialize: function() {
+    // init beers collection
     BeerShop.beers = new BeerShop.Collections.Beers();
+
+    // init views
+    BeerShop.Views.beersIndex = new BeerShop.Views.BeersIndex({ collection: BeerShop.beers });
+    BeerShop.Views.beerEdit = new BeerShop.Views.BeerEdit();
+    BeerShop.Views.beerShow = new BeerShop.Views.BeerShow();
+    BeerShop.Views.notice = new BeerShop.Views.Notice();
+    BeerShop.Views.error = new BeerShop.Views.Error();
+
+    // fetch beers
     BeerShop.beers.fetch({
       success: function(collection, data) {
-        new BeerShop.Views.BeersIndex({ collection: collection });
+        BeerShop.Views.beersIndex.render();
       },
       error: function() {
-        new BeerShop.Views.Error({ message: 'Error loading beers.' });
+        BeerShop.Views.error.showMessage('Error loading beers.');
         this.navigate("");
       }      
     });
   },
   
+  index: function() {
+    BeerShop.Views.notice.showMessage('');
+    BeerShop.Views.beersIndex.render();
+  },
+  
   newBeer: function() {
-    new BeerShop.Views.BeerEdit({ model: new BeerShop.Models.Beer() });
+    var beer = new BeerShop.Models.Beer();
+    BeerShop.Views.beerEdit.model = beer;
+    BeerShop.Views.beerEdit.render();
   },
   
   edit: function(id) {
     var beer = BeerShop.beers.get(id);
-    new BeerShop.Views.BeerEdit({ model: beer });    
+    BeerShop.Views.beerEdit.model = beer;
+    BeerShop.Views.beerEdit.render();
   },
   
   show: function(id) {
     var beer = BeerShop.beers.get(id);
-    new BeerShop.Views.BeerShow({ model: beer });    
+    BeerShop.Views.beerShow.model = beer;
+    BeerShop.Views.beerShow.render();
   }
 });
