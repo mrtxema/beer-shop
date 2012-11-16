@@ -27,28 +27,29 @@ BeerShop.Routers.Beers = Backbone.Router.extend({
         this.navigate("");
       }      
     });
+    
+    // reset notice section
+    this.bind("all",function(route, router) {
+      BeerShop.Views.notice.render();
+    });    
   },
   
   index: function() {
-    BeerShop.Views.notice.showMessage('');
     BeerShop.Views.beersIndex.render();
   },
   
   newBeer: function() {
     var beer = new BeerShop.Models.Beer();
-    BeerShop.Views.beerEdit.model = beer;
-    BeerShop.Views.beerEdit.render();
+    BeerShop.Views.beerEdit.renderModel(beer);
   },
   
   edit: function(id) {
     var beer = BeerShop.beers.get(id);
-    BeerShop.Views.beerEdit.model = beer;
-    BeerShop.Views.beerEdit.render();
+    BeerShop.Views.beerEdit.renderModel(beer);
   },
   
   show: function(id) {
     var beer = BeerShop.beers.get(id);
-    BeerShop.Views.beerShow.model = beer;
-    BeerShop.Views.beerShow.render();
+    BeerShop.Views.beerShow.renderModel(beer);
   }
 });

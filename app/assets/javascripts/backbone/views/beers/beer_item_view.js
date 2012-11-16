@@ -1,4 +1,4 @@
-BeerShop.Views.BeerItemView = Backbone.View.extend({
+BeerShop.Views.BeerItemView = BeerShop.Views.Base.extend({
   el: '#beer-list',
   tagName: 'tbody',
   
@@ -7,7 +7,7 @@ BeerShop.Views.BeerItemView = Backbone.View.extend({
   },
   
   render: function() {
-    this.$el.append(JST['backbone/templates/beers/itemview']({ beer: this.model }));
+    this.$el.append(this.compose('beers/itemview', { beer: this.model }));
     return this;
   }
 });

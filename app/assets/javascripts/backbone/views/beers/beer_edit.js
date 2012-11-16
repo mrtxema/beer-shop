@@ -1,13 +1,10 @@
-BeerShop.Views.BeerEdit = Backbone.View.extend({
+BeerShop.Views.BeerEdit = BeerShop.Views.Base.extend({
   el: '#app',
   
   events: {
     "submit form": "save"
   },
    
-  initialize: function() {
-  },
-  
   save: function() {
     if (this.model.isNew()) {
       BeerShop.beers.add(this.model);
@@ -27,15 +24,18 @@ BeerShop.Views.BeerEdit = Backbone.View.extend({
         self.delegateEvents();
         Backbone.history.navigate('beers/' + model.id + '/edit');
       },
-      error: function() {
-        BeerShop.Views.error.showMessage('Could not save that beer.');
+      error: function(model, data) {
+        if (model.isNew()) {
+          BeerShop.beers.remove(model);
+        }
+        BeerShop.Views.error.showMessage('Could not save that beer.');        
       }
     });
     return false;
   },
   
   render: function() {
-    this.$el.html(JST['backbone/templates/beers/edit']({ beer: this.model }));
+    this.$el.html(this.compose('beers/edit', { beer: this.model }));
     return this;
   }
 });

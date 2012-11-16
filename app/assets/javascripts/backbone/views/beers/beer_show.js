@@ -1,11 +1,8 @@
-BeerShop.Views.BeerShow = Backbone.View.extend({
+BeerShop.Views.BeerShow = BeerShop.Views.Base.extend({
   el: '#app',
   
-  initialize: function() {
-  },
-  
   render: function() {
-    this.$el.html(JST['backbone/templates/beers/show']({ beer: this.model }));
+    this.$el.html(this.compose('beers/show', { beer: this.model }));
     return this;
   }
 });

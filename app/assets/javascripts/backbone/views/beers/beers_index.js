@@ -1,11 +1,8 @@
-BeerShop.Views.BeersIndex = Backbone.View.extend({
+BeerShop.Views.BeersIndex = BeerShop.Views.Base.extend({
   el: '#app',
 
   events: {
     "click a.delete": "destroy"
-  },
-  
-  initialize: function() {
   },
   
   destroy: function(ev) {
@@ -31,7 +28,7 @@ BeerShop.Views.BeersIndex = Backbone.View.extend({
   
   render: function() {
     var self = this;
-    this.$el.html(JST['backbone/templates/beers/index']());
+    this.$el.html(this.compose('beers/index'));
     this.collection.each(function(beer) {
     	new BeerShop.Views.BeerItemView({ model: beer });
     });
