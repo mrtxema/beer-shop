@@ -1,6 +1,4 @@
 BeerShop.Views.BeersIndex = BeerShop.Views.Base.extend({
-  el: '#app',
-
   events: {
     "click a.delete": "destroy"
   },
@@ -13,13 +11,13 @@ BeerShop.Views.BeersIndex = BeerShop.Views.Base.extend({
       var beer = BeerShop.beers.get(id.value);      
       beer.destroy({
         success: function(model, data) {
-          BeerShop.Views.notice.showMessage('Beer successfully deleted');
+          BeerShop.Views.notice.showNotice('Beer successfully deleted');
           self.render();
           self.delegateEvents();
           Backbone.history.navigate('');
         },
         error: function() {
-          BeerShop.Views.error.showMessage('Could not delete that beer.');
+          BeerShop.Views.notice.showError('Could not delete that beer.');
         }
       });
     }

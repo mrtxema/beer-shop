@@ -1,6 +1,4 @@
 BeerShop.Views.BeerEdit = BeerShop.Views.Base.extend({
-  el: '#app',
-  
   events: {
     "submit form": "save"
   },
@@ -18,7 +16,7 @@ BeerShop.Views.BeerEdit = BeerShop.Views.Base.extend({
       ibu:    this.$('[name=ibu]').val()
     }, {
       success: function(model, data) {
-        BeerShop.Views.notice.showMessage('Beer successfully saved');
+        BeerShop.Views.notice.showNotice('Beer successfully saved');
         self.model = model;
         self.render();
         self.delegateEvents();
@@ -28,7 +26,9 @@ BeerShop.Views.BeerEdit = BeerShop.Views.Base.extend({
         if (model.isNew()) {
           BeerShop.beers.remove(model);
         }
-        BeerShop.Views.error.showMessage('Could not save that beer.');        
+        var errors = _.map($.parseJSON(data.responseText), function(msg, fld) { return fld + ": " + msg; });
+        var messages = _.union(["Could not save that beer."], errors);
+        BeerShop.Views.notice.showErrors(messages);        
       }
     });
     return false;

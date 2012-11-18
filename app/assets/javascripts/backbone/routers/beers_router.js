@@ -15,7 +15,6 @@ BeerShop.Routers.Beers = Backbone.Router.extend({
     BeerShop.Views.beerEdit = new BeerShop.Views.BeerEdit();
     BeerShop.Views.beerShow = new BeerShop.Views.BeerShow();
     BeerShop.Views.notice = new BeerShop.Views.Notice();
-    BeerShop.Views.error = new BeerShop.Views.Error();
 
     // fetch beers
     BeerShop.beers.fetch({
@@ -23,14 +22,14 @@ BeerShop.Routers.Beers = Backbone.Router.extend({
         BeerShop.Views.beersIndex.render();
       },
       error: function() {
-        BeerShop.Views.error.showMessage('Error loading beers.');
+        BeerShop.Views.notice.showError('Error loading beers.');
         this.navigate("");
       }      
     });
     
     // reset notice section
     this.bind("all",function(route, router) {
-      BeerShop.Views.notice.render();
+      BeerShop.Views.notice.clear();
     });    
   },
   

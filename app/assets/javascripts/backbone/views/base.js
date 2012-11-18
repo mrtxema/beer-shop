@@ -1,4 +1,6 @@
 BeerShop.Views.Base = Backbone.View.extend({
+  el: '#app',
+
   compose: function(tpl, params) {
     var templateFunc = JST['backbone/templates/' + tpl];
     return templateFunc(params);

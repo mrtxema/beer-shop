@@ -20,7 +20,6 @@
 //= require_tree ./backbone/models
 //= require_tree ./backbone/collections
 //= require ./backbone/views/base
-//= require ./backbone/views/message
 //= require_tree ./backbone/views
 //= require_tree ./backbone/routers
 //= require_tree ./backbone/templates
