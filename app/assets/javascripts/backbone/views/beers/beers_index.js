@@ -4,11 +4,12 @@ BeerShop.Views.BeersIndex = BeerShop.Views.Base.extend({
   },
   
   destroy: function(ev) {
-    var msg = ev.target.attributes['bb-confirm'];
-    if (!msg || confirm(msg.value)) {
+    var elm = $(ev.target).closest('.delete');
+    var msg = elm.attr('bb-confirm');
+    if (!msg || confirm(msg)) {
       var self = this;
-      var id = ev.target.attributes['bb-id'];
-      var beer = BeerShop.beers.get(id.value);      
+      var id = elm.attr('bb-id');
+      var beer = BeerShop.beers.get(id);
       beer.destroy({
         success: function(model, data) {
           BeerShop.Views.notice.showNotice('Beer successfully deleted');

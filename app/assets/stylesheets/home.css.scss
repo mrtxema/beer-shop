@@ -1,3 +1,381 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* Reset CSS */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, four_equalsquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, tr, th, td, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, input, textarea {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	font-weight:normal;
+	vertical-align:baseline;
+}
+body {
+	line-height:1
+}
+ol, ul {
+	list-style:none
+}
+four_equalsquote, q {
+	quotes:none
+}
+four_equalsquote:before, four_equalsquote:after, q:before, q:after {
+	content:'';
+	content:none
+}
+:focus {
+	outline:0
+}
+a {
+	text-decoration:none
+}
+
+/* General */
+html, body {
+	height: 100%;
+}
+body {
+	background:image_url('topLine.png') repeat-x
+}
+#foot {
+	width:100%;
+	height:40px;
+	float:left;
+}
+#foot p {
+	width:100%;
+	float:left;
+	margin-top:24px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#8e8e8e;
+	line-height:16px;
+	text-align:center
+}
+#foot p a {
+	color:#8e8e8e
+}
+#foot p a:hover {
+	color:#1552A0
+}
+#admin {
+	width:100%;
+	float:left;
+	min-height:100%;
+	height:auto !important;
+	height:100%;
+	background:image_url('headBg.png') repeat-x left top
+}
+.bgc {
+	background:image_url('bodyBg.png') repeat
+}
+#wrap {
+	width:980px;
+	margin:0 auto
+}
+#admin h1 {
+	width:auto;
+	height:53px;
+	float:left;
+	margin-top:60px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:29px;
+	color:#FFF;
+	line-height:34px;
+	text-transform:uppercase;
+	cursor:default
+}
+#admin h1 div {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	line-height:11px
+}
+#admin h1 a {
+	color:#ffffff
+}
+#admin #head {
+	width:100%;
+	height:376px;
+	float:left;
+	position:relative;
+	background:image_url('innerPageFX.png') no-repeat 137px 0
+}
+#admin #head .logo {
+	position:absolute;
+	left:40%;
+	top:100px;
+}
+#admin #head .shadow {
+	width:auto;
+	float:left;
+	position:absolute;
+	bottom:0;
+	left:-150px
+}
+#content {
+	width:100%;
+	float:left;
+	padding-bottom:20px
+}
+
+/* data list */
+#content .datalist {
+	width:100%;
+	float:left;
+	padding-bottom:20px;
+	border:#bdbcbd solid 1px;
+	background:#ffffff image_url('tableHeadingBg.png') repeat-x;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px
+}
+#content .datalist .heading {
+	width:100%;
+	height:62px;
+	float:left
+}
+#content h2 {
+	width:auto;
+	float:left;
+	margin:20px 0 0 29px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:18px;
+	color:#464646;
+	font-weight:bold;
+	line-height:23px
+}
+#content .datalist select {
+	width:180px;
+	float:right;
+	margin:0 0 0 3px
+}
+#content .datalist ul {
+	width:940px;
+	float:left;
+	margin:16px 0 0 20px
+}
+#content .datalist ul li {
+	width:100%;
+	height:43px;
+	float:left;
+	margin-top:2px;
+	background:#e8e8e8
+}
+#content .datalist ul li.odd {
+	background:#f5f5f5
+}
+#content .datalist ul li div.chk {
+	width:60px;
+	height:43px;
+	float:left;
+	padding-left:25px;
+}
+#content .datalist ul li div.chk input {
+	margin-top:15px;
+}
+#content .datalist ul li p {
+	height:43px;
+	float:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	line-height:40px;
+	color:#442c83;
+}
+#content .datalist ul li p.head {
+	color:#464646;
+	font-weight:bold;
+}
+#content .datalist ul li p.brewer {
+	width:161px;
+}
+#content .datalist ul li p.name {
+	width:120px;
+}
+#content .datalist ul li p.style {
+	width:120px;
+}
+#content .datalist ul li p.abv {
+	width:90px;
+	margin-right:30px;
+	text-align:center
+}
+#content .datalist ul li p.ibu {
+	width:120px;
+	margin-right:30px;
+	text-align:center
+}
+#content .datalist ul li p.edit {
+	width:90px;
+	margin-right:30px;
+	text-align:center
+}
+#content .datalist ul li p.edit a {
+	text-decoration:underline;
+	float:left;
+	margin:0 5px;
+}
+
+/* forms */
+#content .forms {
+	width:100%;
+	float:left;
+	padding-bottom:20px;
+	border:#bdbcbd solid 1px;
+	background:#ffffff image_url('tableHeadingBg.png') repeat-x;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px
+}
+#content .forms .heading {
+	width:100%;
+	height:62px;
+	float:left
+}
+#content .forms .heading .search {
+	width:auto;
+	float:right;
+	margin:15px 21px 0 0
+}
+#content .forms .heading input[type="text"] {
+	width:150px;
+	height:20px;
+	float:left;
+	padding:5px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#606060;
+	border:0;
+	background:image_url('searchBg.png') no-repeat left top
+}
+#content .forms .heading input[type="submit"] {
+	width:28px;
+	height:30px;
+	float:left;
+	border:0;
+	background:image_url('searchBg.png') no-repeat right top
+}
+#content .forms h3 {
+	width:940px;
+	float:left;
+	margin:20px 0 0 20px;
+	padding-bottom:16px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#464646;
+	font-weight:bold;
+	border-bottom:#dcdcdc solid 1px
+}
+#content .forms .styleForm {
+	width:940px;
+	float:left;
+	margin:20px 0 0 20px
+}
+#content .forms .styleForm p {
+	width:100%;
+	float:left;
+	margin-top:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#8a8a8a
+}
+#content .forms .styleForm p label {
+	width:auto;
+	float:left;
+	margin:10px 10px 0 0;
+}
+#content .forms .styleForm input.reg {
+	width:208px;
+	height:15px;
+	float:left;
+	padding:5px;
+	margin-top:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#8a8a8a;
+	border:0;
+	background:image_url('form-regsizeBg.png') no-repeat
+}
+#content .forms .styleForm input.med {
+	width:369px;
+	height:15px;
+	float:left;
+	padding:5px;
+	margin-top:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#8a8a8a;
+	border:0;
+	background:image_url('form-mediunSizeBg.png') no-repeat
+}
+#content .forms .styleForm input.large {
+	width:610px;
+	height:15px;
+	float:left;
+	padding:5px;
+	margin-top:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#8a8a8a;
+	border:0;
+	background:image_url('form-largeSizeBg.png') no-repeat
+}
+#content .forms .styleForm textarea {
+	width:610px;
+	height:65px;
+	float:left;
+	padding:5px;
+	margin-top:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#8a8a8a;
+	border:0;
+	background:image_url('form-textareaBg.png') no-repeat
+}
+#content .forms .styleForm h3 {
+	margin-left:0;
+}
+#content .forms .styleForm div.txt {
+	width:853px;
+	float:left;
+	margin:30px 0 0 10px
+}
+#content .forms .styleForm div.txt img {
+	width:auto;
+	float:left;
+	margin-left:-5px;
+}
+#content .forms .styleForm div.txt textarea {
+	width:840px;
+	height:145px;
+	float:left;
+	padding:5px;
+	margin-top:0px;
+	border:none
+}
+#content .forms .styleForm input[type="submit"] {
+	width:220px;
+	height:42px;
+	float:left;
+	margin:20px 20px 0 0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#757575;
+	text-align:center;
+	cursor:pointer;
+	border:0;
+	background:image_url('submit-bg.png') no-repeat
+}
+#content .forms .styleForm input[type="reset"] {
+	width:142px;
+	height:42px;
+	float:left;
+	margin:20px 20px 0 0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#757575;
+	text-align:center;
+	cursor:pointer;
+	border:0;
+	background:image_url('submit-bg.png') no-repeat
+}

@@ -1,6 +1,5 @@
 BeerShop.Views.BeerItemView = BeerShop.Views.Base.extend({
   el: '#beer-list',
-  tagName: 'tbody',
   
   initialize: function() {
     this.render();

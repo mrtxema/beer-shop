@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>BeerShop</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<meta charset="UTF-8" />
+	<title>Hops & Yeasts | beer shop</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
 </head>
-<body>
+<body class="bgc">
 
-<%= yield %>
+	<div id="admin">
+		<div id="wrap">
+
+			<div id="head">
+				<h1>
+					<%= link_to root_path do %>
+						hops &amp; yeasts<br><div>BEER SHOP</div>
+					<% end %>
+				</h1>
+				<img src="<%=asset_path "beer.png"%>" class="logo" alt="">
+				<img src="<%=asset_path "shadow.png"%>" class="shadow" alt="">
+			</div>
+
+			<div id="content">
+				<%= yield %>
+			</div>
+
+		</div>
+
+		<div id="foot">
+			<p>
+				&copy; Hops & Yeasts. All rights reserved.  |  
+				Designed by: <a href="https://github.com/mrtxema/" target="_blank">Txema Martínez</a>
+			</p>
+		</div>
+	</div>
 
 </body>
 </html>

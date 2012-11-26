@@ -1,10 +1,13 @@
-<tr>
-  <td><%= beer.escape('brewer') %></td>
-  <td><%= beer.escape('name') %></td>
-  <td><%= beer.escape('style') %></td>
-  <td><%= beer.escape('abv') %></td>
-  <td><%= beer.escape('ibu') %></td>
-  <td><a href="#beers/<%= beer.id %>">Show</a></td>
-  <td><a href="#beers/<%= beer.id %>/edit">Edit</a></td>
-  <td><a class="delete" bb-id="<%= beer.id %>" bb-confirm="Are you sure?" href="#">Destroy</a></td>
-</tr>
+<li>
+	<div class="chk"></div>
+	<p class="brewer"><%= beer.escape('brewer') %></p>
+	<p class="name"><%= beer.escape('name') %></p>
+	<p class="style"><%= beer.escape('style') %></p>
+	<p class="abv"><%= beer.escape('abv') %></p>
+	<p class="ibu"><%= beer.escape('ibu') %></p>
+	<p class="edit">
+		<a href="#beers/<%= beer.id %>"><img src="/assets/showIco.png" alt=""></a>
+		<a href="#beers/<%= beer.id %>/edit"><img src="/assets/editIco.png" alt=""></a>
+		<a class="delete" bb-id="<%= beer.id %>" bb-confirm="Are you sure?" href="#"><img src="/assets/deletIco.png" alt=""></a>
+	</p>
+</li>
