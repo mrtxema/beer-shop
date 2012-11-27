@@ -179,6 +179,7 @@ body {
 	float:left;
 	font-family:Tahoma, Geneva, sans-serif;
 	font-size:12px;
+	overflow:hidden;
 	line-height:40px;
 	color:#442c83;
 }
@@ -232,29 +233,6 @@ body {
 	height:62px;
 	float:left
 }
-#content .forms .heading .search {
-	width:auto;
-	float:right;
-	margin:15px 21px 0 0
-}
-#content .forms .heading input[type="text"] {
-	width:150px;
-	height:20px;
-	float:left;
-	padding:5px;
-	font-family:Tahoma, Geneva, sans-serif;
-	font-size:12px;
-	color:#606060;
-	border:0;
-	background:image_url('searchBg.png') no-repeat left top
-}
-#content .forms .heading input[type="submit"] {
-	width:28px;
-	height:30px;
-	float:left;
-	border:0;
-	background:image_url('searchBg.png') no-repeat right top
-}
 #content .forms h3 {
 	width:940px;
 	float:left;
@@ -279,11 +257,6 @@ body {
 	font-size:11px;
 	color:#8a8a8a
 }
-#content .forms .styleForm p label {
-	width:auto;
-	float:left;
-	margin:10px 10px 0 0;
-}
 #content .forms .styleForm input.reg {
 	width:208px;
 	height:15px;
@@ -296,8 +269,8 @@ body {
 	border:0;
 	background:image_url('form-regsizeBg.png') no-repeat
 }
-#content .forms .styleForm input.med {
-	width:369px;
+#content .forms .styleForm input.small {
+	width:70px;
 	height:15px;
 	float:left;
 	padding:5px;
@@ -306,76 +279,26 @@ body {
 	font-size:11px;
 	color:#8a8a8a;
 	border:0;
-	background:image_url('form-mediunSizeBg.png') no-repeat
+	text-align:right;
+	background:image_url('form-smallsizeBg.png') no-repeat
 }
-#content .forms .styleForm input.large {
-	width:610px;
-	height:15px;
+.blueButton {
+	width:140px;
+	height:31px;
 	float:left;
-	padding:5px;
-	margin-top:10px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:11px;
-	color:#8a8a8a;
-	border:0;
-	background:image_url('form-largeSizeBg.png') no-repeat
-}
-#content .forms .styleForm textarea {
-	width:610px;
-	height:65px;
-	float:left;
-	padding:5px;
-	margin-top:10px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:11px;
-	color:#8a8a8a;
-	border:0;
-	background:image_url('form-textareaBg.png') no-repeat
-}
-#content .forms .styleForm h3 {
-	margin-left:0;
-}
-#content .forms .styleForm div.txt {
-	width:853px;
-	float:left;
-	margin:30px 0 0 10px
-}
-#content .forms .styleForm div.txt img {
-	width:auto;
-	float:left;
-	margin-left:-5px;
-}
-#content .forms .styleForm div.txt textarea {
-	width:840px;
-	height:145px;
-	float:left;
-	padding:5px;
-	margin-top:0px;
-	border:none
-}
-#content .forms .styleForm input[type="submit"] {
-	width:220px;
-	height:42px;
-	float:left;
-	margin:20px 20px 0 0;
-	font-family:Arial, Helvetica, sans-serif;
+	margin:10px 18px 0 0;
+	font-family:Tahoma, Geneva, sans-serif;
 	font-size:12px;
-	color:#757575;
+	color:#fefefe;
+	line-height:30px;
+	text-shadow:#333 1px 1px 0;
 	text-align:center;
-	cursor:pointer;
-	border:0;
-	background:image_url('submit-bg.png') no-repeat
+	background:image_url('buttonBg.png') no-repeat 0 0
 }
-#content .forms .styleForm input[type="reset"] {
-	width:142px;
-	height:42px;
-	float:left;
-	margin:20px 20px 0 0;
-	font-family:Arial, Helvetica, sans-serif;
+.showvalue {
+	display:block;
+	margin:5px 10px;
 	font-size:12px;
-	color:#757575;
-	text-align:center;
-	cursor:pointer;
-	border:0;
-	background:image_url('submit-bg.png') no-repeat
+	font-weight:bold;
+	color:#442c83;
 }
