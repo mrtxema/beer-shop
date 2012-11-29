@@ -20,7 +20,7 @@
 		<input class="small" name="ibu" type="number" min="0" max="999" step="1" placeholder="Enter IBU" value="<%= beer.escape('ibu') %>" />
 	</p>
 	<p>
-		<input type="submit" class="blueButton" value="<%= beer.isNew() ? 'Create' : 'Update' %> beer" />
+		<a href="#" id="save" class="blueButton"><%= beer.isNew() ? 'Create' : 'Update' %> beer</a>
 		<a href="#" class="blueButton">Back</a>
 	</p>
 </form>

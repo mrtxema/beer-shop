@@ -1,6 +1,8 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass";
+
 /* Reset CSS */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, four_equalsquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, tr, th, td, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, input, textarea {
 	margin:0;
@@ -35,9 +37,6 @@ a {
 html, body {
 	height: 100%;
 }
-body {
-	background:image_url('topLine.png') repeat-x
-}
 #foot {
 	width:100%;
 	height:40px;
@@ -65,7 +64,9 @@ body {
 	min-height:100%;
 	height:auto !important;
 	height:100%;
-	background:image_url('headBg.png') repeat-x left top
+	@include background-image(linear-gradient(top,  #75daff 0%,#26a3ff 0%,#2498f2 17%,#218be3 30%,#1658a6 73%,#1655a4 77%,#1553a0 78%,#12438f 100%,#224f96 100%));
+	@include background-size(100% 428px);
+	background-repeat:no-repeat;
 }
 .bgc {
 	background:image_url('bodyBg.png') repeat

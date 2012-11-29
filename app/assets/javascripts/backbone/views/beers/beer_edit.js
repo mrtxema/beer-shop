@@ -1,6 +1,6 @@
 BeerShop.Views.BeerEdit = BeerShop.Views.Base.extend({
   events: {
-    "submit form": "save"
+    "click #save": "save"
   },
    
   save: function() {
