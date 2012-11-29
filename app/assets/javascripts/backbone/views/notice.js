@@ -18,7 +18,7 @@ BeerShop.Views.Notice = BeerShop.Views.Base.extend({
   },
   
   clear: function() {
-    this._showMessages("", "");
+    this._showMessages("", []);
   },
   
   _showMessages: function(css, msgs) {
@@ -27,7 +27,11 @@ BeerShop.Views.Notice = BeerShop.Views.Base.extend({
   },
 
   render: function() {
-    this.$el.html(this.compose('notice', this.options));
+    var x = this.compose('notice', this.options);
+    console.log("Notice content: %o", x);
+    console.log("this.$el: %o", this.$el);
+    console.log("$(this.el): %o", $(this.el));
+    this.$el.html(x);
     return this;
   }
 });

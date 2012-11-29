@@ -26,6 +26,7 @@ BeerShop.Views.BeersIndex = BeerShop.Views.Base.extend({
   },  
   
   render: function() {
+    this.setTitle("Beer list");
     var self = this;
     this.$el.html(this.compose('beers/index'));
     this.collection.each(function(beer) {

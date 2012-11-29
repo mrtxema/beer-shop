@@ -1,31 +1,26 @@
-<div class="forms">
-	<div class="heading">
-		<h2>Beer details</h2>
-	</div>
-	<div class="styleForm">
-		<p>
-			Brewer<br />
-			<span class="showvalue"><%= beer.escape('brewer') %></span>
-		</p>
-		<p>
-			Name<br />
-			<span class="showvalue"><%= beer.escape('name') %></span>
-		</p>
-		<p>
-			Style<br />
-			<span class="showvalue"><%= beer.escape('style') %></span>
-		</p>
-		<p>
-			Alcohol by volume (ABV)<br />
-			<span class="showvalue"><%= beer.escape('abv') %></span>
-		</p>
-		<p>
-			International bittering units (IBU)<br />
-			<span class="showvalue"><%= beer.escape('ibu') %></span>
-		</p>
-		<p>
-			<a href="#beers/<%= beer.id %>/edit" class="blueButton">Edit</a>
-			<a href="#" class="blueButton">Back</a>
-		</p>
-	</div>
+<div class="styleForm">
+	<p>
+		Brewer<br />
+		<span class="showvalue"><%= beer.escape('brewer') %></span>
+	</p>
+	<p>
+		Name<br />
+		<span class="showvalue"><%= beer.escape('name') %></span>
+	</p>
+	<p>
+		Style<br />
+		<span class="showvalue"><%= beer.escape('style') %></span>
+	</p>
+	<p>
+		Alcohol by volume (ABV)<br />
+		<span class="showvalue"><%= beer.escape('abv') %></span>
+	</p>
+	<p>
+		International bittering units (IBU)<br />
+		<span class="showvalue"><%= beer.escape('ibu') %></span>
+	</p>
+	<p>
+		<a href="#beers/<%= beer.id %>/edit" class="blueButton">Edit</a>
+		<a href="#" class="blueButton">Back</a>
+	</p>
 </div>

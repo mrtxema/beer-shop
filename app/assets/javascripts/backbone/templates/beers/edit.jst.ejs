@@ -1,31 +1,26 @@
-<div class="forms">
-	<div class="heading">
-		<h2>Editing beer</h2>
-	</div>
-	<form class="styleForm">
-		<p>
-			Brewer<br />
-			<input class="reg" name="brewer" type="text" maxlength="30" placeholder="Enter brewer" value="<%= beer.escape('brewer') %>" />
-		</p>
-		<p>
-			Name<br />
-			<input class="reg" name="name" type="text" maxlength="20" placeholder="Enter name" value="<%= beer.escape('name') %>" />
-		</p>
-		<p>
-			Style<br />
-			<input class="reg" name="style" type="text" maxlength="20" placeholder="Enter style" value="<%= beer.escape('style') %>" />
-		</p>
-		<p>
-			Alcohol by volume (ABV)<br />
-			<input class="small" name="abv" type="number" min="0" max="100" step="0.1" placeholder="Enter ABV" value="<%= beer.escape('abv') %>" />
-		</p>
-		<p>
-			International bittering units (IBU)<br />
-			<input class="small" name="ibu" type="number" min="0" max="999" step="1" placeholder="Enter IBU" value="<%= beer.escape('ibu') %>" />
-		</p>
-		<p>
-			<input type="submit" class="blueButton" value="<%= beer.isNew() ? 'Create' : 'Update' %> beer" />
-			<a href="#" class="blueButton">Back</a>
-		</p>
-	</form>
-</div>
+<form class="styleForm">
+	<p>
+		Brewer<br />
+		<input class="reg" name="brewer" type="text" maxlength="30" placeholder="Enter brewer" value="<%= beer.escape('brewer') %>" />
+	</p>
+	<p>
+		Name<br />
+		<input class="reg" name="name" type="text" maxlength="20" placeholder="Enter name" value="<%= beer.escape('name') %>" />
+	</p>
+	<p>
+		Style<br />
+		<input class="reg" name="style" type="text" maxlength="20" placeholder="Enter style" value="<%= beer.escape('style') %>" />
+	</p>
+	<p>
+		Alcohol by volume (ABV)<br />
+		<input class="small" name="abv" type="number" min="0" max="100" step="0.1" placeholder="Enter ABV" value="<%= beer.escape('abv') %>" />
+	</p>
+	<p>
+		International bittering units (IBU)<br />
+		<input class="small" name="ibu" type="number" min="0" max="999" step="1" placeholder="Enter IBU" value="<%= beer.escape('ibu') %>" />
+	</p>
+	<p>
+		<input type="submit" class="blueButton" value="<%= beer.isNew() ? 'Create' : 'Update' %> beer" />
+		<a href="#" class="blueButton">Back</a>
+	</p>
+</form>

@@ -35,6 +35,7 @@ BeerShop.Views.BeerEdit = BeerShop.Views.Base.extend({
   },
   
   render: function() {
+    this.setTitle("Editing beer");
     this.$el.html(this.compose('beers/edit', { beer: this.model }));
     return this;
   }
