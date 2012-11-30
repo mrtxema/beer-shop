@@ -26,7 +26,7 @@ BeerShop.Views.BeerEdit = BeerShop.Views.Base.extend({
         if (model.isNew()) {
           BeerShop.beers.remove(model);
         }
-        var errors = _.map($.parseJSON(data.responseText), function(msg, fld) { return fld + ": " + msg; });
+        var errors = _.map($.parseJSON(data.responseText).errors, function(msg, fld) { return fld + ": " + msg; });
         var messages = _.union(["Could not save that beer."], errors);
         BeerShop.Views.notice.showErrors(messages);        
       }
